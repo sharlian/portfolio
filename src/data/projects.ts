@@ -17,6 +17,12 @@ export type Project = {
   copy: Record<Locale, ProjectCopy>;
 };
 
+export const collections: { slug: CollectionSlug; label: Record<Locale, string> }[] = [
+  { slug: 'emotion', label: { 'zh-Hant': 'Emotion & Meaning', 'zh-Hans': 'Emotion & Meaning', en: 'Emotion & Meaning' } },
+  { slug: 'form', label: { 'zh-Hant': 'Form & Culture', 'zh-Hans': 'Form & Culture', en: 'Form & Culture' } },
+  { slug: 'function', label: { 'zh-Hant': 'Function & Reality', 'zh-Hans': 'Function & Reality', en: 'Function & Reality' } },
+];
+
 const copy = (zhHant: ProjectCopy, zhHans: ProjectCopy, en: ProjectCopy): Record<Locale, ProjectCopy> => ({
   'zh-Hant': zhHant,
   'zh-Hans': zhHans,
