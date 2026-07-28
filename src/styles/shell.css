@@ -1,0 +1,124 @@
+.portfolio-header {
+  align-items: flex-start;
+  color: inherit;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  left: 0;
+  padding: clamp(1.1rem, 2.2vw, 2rem);
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: var(--z-nav);
+}
+
+.portfolio-header a,
+.portfolio-header button,
+.portfolio-footer a {
+  pointer-events: auto;
+}
+
+.portfolio-brand {
+  display: inline-flex;
+  flex-direction: column;
+  gap: .24rem;
+  justify-self: start;
+  text-decoration: none;
+}
+
+.portfolio-brand strong,
+.portfolio-all-works {
+  font-size: clamp(.7rem, .65rem + .2vw, .84rem);
+  font-weight: 600;
+  letter-spacing: .055em;
+}
+
+.portfolio-brand span {
+  font-size: clamp(.63rem, .6rem + .12vw, .74rem);
+  opacity: .76;
+}
+
+.portfolio-header__navigation {
+  align-items: center;
+  display: flex;
+  min-height: 1.8rem;
+}
+
+.portfolio-all-works {
+  text-decoration-thickness: 1px;
+  text-underline-offset: .3em;
+}
+
+.portfolio-header__language {
+  margin-left: clamp(1rem, 2vw, 2rem);
+}
+
+.portfolio-header__language .language-switch {
+  gap: .42rem;
+  position: static;
+}
+
+.portfolio-header__language .language-switch button {
+  min-height: 1.8rem;
+  min-width: 1.8rem;
+  padding: .2rem;
+}
+
+.portfolio-footer {
+  bottom: 0;
+  color: inherit;
+  left: 0;
+  padding: 1.25rem clamp(1.1rem, 2.2vw, 2rem);
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  z-index: var(--z-nav);
+}
+
+.portfolio-footer nav {
+  display: flex;
+  gap: clamp(.8rem, 1.6vw, 1.4rem);
+  justify-content: flex-end;
+}
+
+.portfolio-footer a {
+  font-size: .68rem;
+  opacity: .82;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .28em;
+}
+
+.portfolio-footer a:hover,
+.portfolio-footer a:focus-visible {
+  opacity: 1;
+}
+
+@media (max-width: 700px) {
+  .portfolio-header {
+    grid-template-columns: 1fr auto;
+    padding: 1rem;
+  }
+
+  .portfolio-header__navigation {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .portfolio-header__language {
+    grid-column: 1 / -1;
+    justify-self: end;
+    margin-left: 0;
+    margin-top: .7rem;
+  }
+
+  .portfolio-footer {
+    background: #171814;
+    color: #f7f7f2;
+    padding: 1.1rem 1rem;
+    position: static;
+  }
+
+  .portfolio-footer nav {
+    justify-content: flex-start;
+  }
+}
