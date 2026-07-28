@@ -1,6 +1,5 @@
-import { MaterialAtlas } from '../components/MaterialAtlas';
-import { featuredProjects } from '../data/projects';
+import { PortfolioDesk } from '../components/PortfolioDesk';
 
 export function HomePage() {
-  return <main id="main-content" tabIndex={-1}><MaterialAtlas projects={featuredProjects} /></main>;
+  return <main id="main-content" tabIndex={-1}><PortfolioDesk /></main>;
 }
