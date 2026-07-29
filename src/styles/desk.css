@@ -2,7 +2,7 @@
   --desk-surface: #d8c7aa;
   --desk-surface-deep: #bca889;
   --desk-ink: #3f2f24;
-  --desk-muted: #665347;
+  --desk-muted: #624e42;
   --desk-paper: #f1eadc;
   --desk-paper-edge: #d1c2aa;
   --desk-focus: #6c281b;
@@ -224,7 +224,7 @@
 }
 
 .desk-scene__maker-mark {
-  bottom: 1.2rem;
+  bottom: 3.8rem;
   color: var(--desk-muted);
   font-size: .57rem;
   letter-spacing: .18em;

@@ -7,17 +7,22 @@ import { HomePage } from './pages/HomePage';
 import { CollectionPage } from './pages/CollectionPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { ProjectPage } from './pages/ProjectPage';
+import { getDeskMode } from './utils/deskMode';
 import './styles/global.css';
 import './styles/shell.css';
 
-export default function App() {
+export default function App({ now = new Date() }: { now?: Date }) {
+  const mode = getDeskMode(now);
+
   return (
     <BrowserRouter>
       <LanguageProvider>
-        <a className="skip-link" href="#main-content">Skip to content</a>
-        <SiteHeader />
-        <Routes><Route element={<HomePage />} path="/" /><Route element={<WorkRoute />} path="/works/:slug" /><Route element={<CollectionPage />} path="/works" /><Route element={<NotFoundPage />} path="*" /></Routes>
-        <SiteFooter />
+        <div className="portfolio-app" data-mode={mode}>
+          <a className="skip-link" href="#main-content">Skip to content</a>
+          <SiteHeader />
+          <Routes><Route element={<HomePage now={now} />} path="/" /><Route element={<WorkRoute />} path="/works/:slug" /><Route element={<CollectionPage />} path="/works" /><Route element={<NotFoundPage />} path="*" /></Routes>
+          <SiteFooter />
+        </div>
       </LanguageProvider>
     </BrowserRouter>
   );

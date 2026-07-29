@@ -1,3 +1,14 @@
+.portfolio-app {
+  background: #27241f;
+  color: #f2eadb;
+  min-height: 100svh;
+}
+
+.portfolio-app[data-mode='day'] {
+  background: #d8c7aa;
+  color: #3f2f24;
+}
+
 .portfolio-header {
   align-items: flex-start;
   color: inherit;
@@ -31,11 +42,13 @@
   font-size: clamp(.7rem, .65rem + .2vw, .84rem);
   font-weight: 600;
   letter-spacing: .055em;
+  white-space: nowrap;
 }
 
 .portfolio-brand span {
   font-size: clamp(.63rem, .6rem + .12vw, .74rem);
   opacity: .76;
+  white-space: nowrap;
 }
 
 .portfolio-header__navigation {
