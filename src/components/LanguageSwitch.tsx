@@ -14,7 +14,7 @@ export function LanguageSwitch() {
           onClick={() => setLocale(language)}
           type="button"
         >
-          {language === 'zh-Hant' ? '繁' : language === 'zh-Hans' ? '简' : 'EN'}
+          {language === 'zh-Hant' ? '中繁' : language === 'zh-Hans' ? '中简' : 'En'}
         </button>
       ))}
     </div>

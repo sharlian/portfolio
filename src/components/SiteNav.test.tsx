@@ -9,4 +9,7 @@ test('offers all four collection routes', () => {
 
   expect(screen.getAllByRole('link')).toHaveLength(4);
   expect(screen.getByRole('link', { name: '所有作品' })).toHaveAttribute('href', '/works');
+  expect(screen.getAllByRole('link').map((link) => link.textContent)).toEqual([
+    '所有作品', 'Emotion & Meaning', 'Form & Culture', 'Function & Reality',
+  ]);
 });

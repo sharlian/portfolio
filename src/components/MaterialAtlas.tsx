@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { type PointerEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { Project } from '../data/projects';
 import { useLanguage } from '../i18n/LanguageProvider';
@@ -8,9 +8,15 @@ export function MaterialAtlas({ projects }: { projects: Project[] }) {
   const { locale, labels } = useLanguage();
   const [openProject, setOpenProject] = useState<string | null>(null);
 
+  function handleStagePointerMove(event: PointerEvent<HTMLElement>) {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    event.currentTarget.style.setProperty('--orbit-x', ((event.clientX - bounds.left) / bounds.width - .5).toFixed(2));
+    event.currentTarget.style.setProperty('--orbit-y', ((event.clientY - bounds.top) / bounds.height - .5).toFixed(2));
+  }
+
   return (
     <section aria-label="Featured work" className="material-atlas">
-      <div className="atlas-stage">
+      <div className="atlas-stage" onPointerMove={handleStagePointerMove}>
         <div className="atlas-title"><h1>Sharlian</h1><p>industrial design <span>|</span> product design <span>|</span> furniture design</p></div>
         <div className="atlas-desktop">{projects.map((project, index) => <ProjectCard index={index} key={project.slug} project={project} />)}</div>
       </div>

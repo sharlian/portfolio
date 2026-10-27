@@ -7,12 +7,12 @@ export function SiteNav() {
 
   return (
     <nav className="site-nav" aria-label={labels.primaryNavigation}>
+      <NavLink to="/works">{labels.allWorks}</NavLink>
       {collections.map((collection) => (
         <NavLink key={collection.slug} to={`/works/${collection.slug}`}>
           {collection.label[locale]}
         </NavLink>
       ))}
-      <NavLink to="/works">{labels.allWorks}</NavLink>
     </nav>
   );
 }
