@@ -15,8 +15,7 @@ export function HomePage() {
         <h2 className="sr-only" id="categories-heading">Browse work by category</h2>
         {collections.map((collection) => (
           <Link className="category-card" key={collection.slug} to={`/works/${collection.slug}`}>
-            <span><strong>{collection.title}</strong><small>View works</small></span>
-            <p>{collection.description}</p>
+            <strong>{collection.title}</strong>
           </Link>
         ))}
       </section>

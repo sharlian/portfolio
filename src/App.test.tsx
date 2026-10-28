@@ -15,4 +15,6 @@ test('renders the portfolio shell and canonical work navigation', () => {
   expect(screen.getByRole('link', { name: /Function & Reality/ })).toHaveAttribute('href', '/works/function');
   expect(screen.getAllByText('Product & Furniture Designer')).toHaveLength(2);
   expect(document.querySelectorAll('main img')).toHaveLength(0);
+  expect(screen.queryByText('View works')).not.toBeInTheDocument();
+  expect(screen.queryByText('Design with sense and sensibility — balancing emotion and logic in form.')).not.toBeInTheDocument();
 });
