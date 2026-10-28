@@ -9,7 +9,7 @@ afterEach(cleanup);
 test.each(['/', '/works'])('hides the redundant All Works link at %s', (path) => {
   render(<MemoryRouter initialEntries={[path]}><SiteHeader /></MemoryRouter>);
 
-  expect(screen.getByRole('link', { name: 'SHARLIAN — Back to home' })).toHaveAttribute('href', '/');
+  expect(screen.getByRole('link', { name: 'Sharlian — Back to home' })).toHaveAttribute('href', '/');
   expect(screen.queryByText('Product & Furniture Designer')).not.toBeInTheDocument();
   expect(screen.queryByText('Home')).not.toBeInTheDocument();
   expect(screen.queryByRole('link', { name: 'All Works' })).not.toBeInTheDocument();

@@ -8,7 +8,10 @@ test('renders the portfolio shell and canonical work navigation', () => {
   render(<App />);
 
   expect(screen.getByRole('main')).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: 'SHARLIAN — Back to home' })).toHaveAttribute('href', '/');
+  const brandLink = screen.getByRole('link', { name: 'Sharlian — Back to home' });
+  expect(brandLink).toHaveAttribute('href', '/');
+  expect(brandLink).toHaveTextContent(/^Sharlian$/);
+  expect(brandLink.querySelector('strong')).toHaveClass('portfolio-brand__wordmark');
   expect(screen.getAllByText('Product & Furniture Designer')).toHaveLength(1);
   expect(screen.queryByRole('link', { name: 'All Works' })).not.toBeInTheDocument();
   expect(screen.getByRole('link', { name: 'Browse all works' })).toHaveAttribute('href', '/works');

@@ -1,3 +1,11 @@
+@font-face {
+  font-display: swap;
+  font-family: "White Angelica";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/WhiteAngelica.ttf") format("truetype");
+}
+
 :root {
   color: #24231f;
   background: #f3efe6;
@@ -66,7 +74,14 @@ main { min-height: 60vh; }
   z-index: 20;
 }
 .portfolio-brand { display: inline-flex; flex-direction: column; gap: .12rem; justify-self: auto; text-decoration: none; }
-.portfolio-brand strong, .portfolio-all-works { font-size: .78rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
+.portfolio-brand strong.portfolio-brand__wordmark {
+  font-family: "White Angelica", cursive;
+  font-size: 1.55rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1;
+}
+.portfolio-all-works { font-size: .78rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
 .portfolio-all-works { text-underline-offset: .25em; }
 
 .home-hero {
