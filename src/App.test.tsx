@@ -17,4 +17,6 @@ test('renders the portfolio shell and canonical work navigation', () => {
   expect(document.querySelectorAll('main img')).toHaveLength(0);
   expect(screen.queryByText('View works')).not.toBeInTheDocument();
   expect(screen.queryByText('Design with sense and sensibility — balancing emotion and logic in form.')).not.toBeInTheDocument();
+  expect(document.querySelector('.home-hero .button-link')).not.toBeInTheDocument();
+  expect(document.querySelector('.home-categories > .button-link')).toHaveAttribute('href', '/works');
 });

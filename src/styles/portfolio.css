@@ -84,13 +84,12 @@ main { min-height: 60vh; }
 .home-hero__introduction { color: var(--muted); font-size: clamp(.92rem, 1.4vw, 1.15rem); margin: 0 0 2.2rem; }
 
 .home-categories {
-  display: grid;
-  gap: clamp(1rem, 2.4vw, 2.5rem);
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 0 auto;
   max-width: var(--content);
-  padding: 0 clamp(1rem, 3vw, 2.5rem) clamp(6rem, 10vw, 10rem);
+  padding: 0 clamp(1rem, 5vw, 5rem) clamp(6rem, 10vw, 10rem);
 }
+.home-categories__grid { display: grid; gap: clamp(1rem, 2.4vw, 2.5rem); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.home-categories__all { margin-top: clamp(2.5rem, 5vw, 4.5rem); }
 .category-card { display: block; padding: 0; text-decoration: none; }
 .category-card strong { font-size: clamp(1rem, 1.6vw, 1.35rem); font-weight: 500; }
 .category-card:hover strong { text-decoration: underline; text-underline-offset: .25em; }
@@ -144,8 +143,8 @@ main { min-height: 60vh; }
 .portfolio-footer a { font-size: .76rem; opacity: 1; text-underline-offset: .25em; }
 
 @media (max-width: 900px) {
-  .home-categories, .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .home-categories .category-card:last-child { grid-column: 1 / -1; width: calc(50% - .6rem); }
+  .home-categories__grid, .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-categories__grid .category-card:last-child { grid-column: 1 / -1; width: calc(50% - .6rem); }
 }
 
 @media (max-width: 600px) {
@@ -153,8 +152,8 @@ main { min-height: 60vh; }
   .portfolio-brand span { max-width: 13rem; white-space: normal; }
   .home-hero { min-height: 62svh; padding-top: 6rem; }
   .home-hero h1 { font-size: clamp(3.3rem, 20vw, 6rem); }
-  .home-categories, .work-grid { grid-template-columns: 1fr; }
-  .home-categories .category-card:last-child { grid-column: auto; width: auto; }
+  .home-categories__grid, .work-grid { grid-template-columns: 1fr; }
+  .home-categories__grid .category-card:last-child { grid-column: auto; width: auto; }
   .listing, .case-study, .not-found { padding-top: 4rem; }
   .work-grid { gap: 3.5rem; }
   .case-study__content { gap: 2rem; }
