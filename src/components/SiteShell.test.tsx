@@ -6,11 +6,17 @@ import { SiteHeader } from './SiteHeader';
 
 afterEach(cleanup);
 
-test('uses the designer name as the only home link', () => {
-  render(<MemoryRouter><SiteHeader /></MemoryRouter>);
+test.each(['/', '/works'])('hides the redundant All Works link at %s', (path) => {
+  render(<MemoryRouter initialEntries={[path]}><SiteHeader /></MemoryRouter>);
 
   expect(screen.getByRole('link', { name: 'SHARLIAN TSENG — Back to home' })).toHaveAttribute('href', '/');
   expect(screen.queryByText('Home')).not.toBeInTheDocument();
+  expect(screen.queryByRole('link', { name: 'All Works' })).not.toBeInTheDocument();
+});
+
+test.each(['/works/emotion', '/projects/tie'])('keeps All Works available from %s', (path) => {
+  render(<MemoryRouter initialEntries={[path]}><SiteHeader /></MemoryRouter>);
+
   expect(screen.getByRole('link', { name: 'All Works' })).toHaveAttribute('href', '/works');
 });
 
