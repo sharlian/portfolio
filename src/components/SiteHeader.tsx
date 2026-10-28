@@ -3,13 +3,13 @@ import { site } from '../data/projects';
 
 export function SiteHeader() {
   const { pathname } = useLocation();
+  const brandName = site.name.split(' ')[0];
   const showAllWorks = pathname !== '/' && pathname !== '/works';
 
   return (
     <header className="portfolio-header">
-      <Link aria-label={`${site.name} — Back to home`} className="portfolio-brand" to="/">
-        <strong>{site.name}</strong>
-        <span>{site.role}</span>
+      <Link aria-label={`${brandName} — Back to home`} className="portfolio-brand" to="/">
+        <strong>{brandName}</strong>
       </Link>
       {showAllWorks ? (
         <nav aria-label="Portfolio navigation">

@@ -67,7 +67,6 @@ main { min-height: 60vh; }
 }
 .portfolio-brand { display: inline-flex; flex-direction: column; gap: .12rem; justify-self: auto; text-decoration: none; }
 .portfolio-brand strong, .portfolio-all-works { font-size: .78rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
-.portfolio-brand span { color: var(--muted); font-size: .72rem; opacity: 1; }
 .portfolio-all-works { text-underline-offset: .25em; }
 
 .home-hero {
@@ -169,7 +168,6 @@ main { min-height: 60vh; }
 
 @media (max-width: 600px) {
   .portfolio-header { display: flex; grid-template-columns: none; padding: .85rem 1rem; }
-  .portfolio-brand span { max-width: 13rem; white-space: normal; }
   .home-hero { min-height: 62svh; padding-top: 6rem; }
   .home-hero h1 { font-size: clamp(3.3rem, 20vw, 6rem); }
   .home-categories__grid, .work-grid { grid-template-columns: 1fr; }
