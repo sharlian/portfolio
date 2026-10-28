@@ -14,4 +14,5 @@ test('renders the portfolio shell and canonical work navigation', () => {
   expect(screen.getByRole('link', { name: /Form & Culture/ })).toHaveAttribute('href', '/works/form');
   expect(screen.getByRole('link', { name: /Function & Reality/ })).toHaveAttribute('href', '/works/function');
   expect(screen.getAllByText('Product & Furniture Designer')).toHaveLength(2);
+  expect(document.querySelectorAll('main img')).toHaveLength(0);
 });

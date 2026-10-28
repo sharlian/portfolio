@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { collections, getProject, site } from '../data/projects';
+import { collections, site } from '../data/projects';
 
 export function HomePage() {
   return (
@@ -13,17 +13,12 @@ export function HomePage() {
 
       <section aria-labelledby="categories-heading" className="home-categories">
         <h2 className="sr-only" id="categories-heading">Browse work by category</h2>
-        {collections.map((collection) => {
-          const cover = getProject(collection.projectSlugs[0])?.cover;
-          return (
-            <Link className="category-card" key={collection.slug} to={`/works/${collection.slug}`}>
-              {cover ? (
-                <img alt="" height={cover.height} loading="lazy" src={cover.src} width={cover.width} />
-              ) : null}
-              <span><strong>{collection.title}</strong><small>View works</small></span>
-            </Link>
-          );
-        })}
+        {collections.map((collection) => (
+          <Link className="category-card" key={collection.slug} to={`/works/${collection.slug}`}>
+            <span><strong>{collection.title}</strong><small>View works</small></span>
+            <p>{collection.description}</p>
+          </Link>
+        ))}
       </section>
     </main>
   );
