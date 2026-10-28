@@ -1,0 +1,23 @@
+[
+  {
+    "projectTitle": "PET URN | Company",
+    "projectSlug": "company",
+    "assetId": "E2605376898779255339093382875918",
+    "sourcePosition": 6,
+    "reason": "Cargo returned a transparent placeholder instead of the original asset."
+  },
+  {
+    "projectTitle": "PET URN | Company",
+    "projectSlug": "company",
+    "assetId": "L2605378966493245305270733064974",
+    "sourcePosition": 9,
+    "reason": "Cargo returned a transparent placeholder instead of the original asset."
+  },
+  {
+    "projectTitle": "PET URN | Tie",
+    "projectSlug": "tie",
+    "assetId": "T2605395203538739913302580087566",
+    "sourcePosition": 15,
+    "reason": "Cargo returned a transparent placeholder instead of the original asset."
+  }
+]

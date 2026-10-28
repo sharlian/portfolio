@@ -1,17 +1,16 @@
 import { Link } from 'react-router-dom';
-import { LanguageSwitch } from './LanguageSwitch';
+import { site } from '../data/projects';
 
 export function SiteHeader() {
   return (
     <header className="portfolio-header">
-      <Link aria-label="SHARLIAN TSENG — Back to desk" className="portfolio-brand" to="/">
-        <strong>SHARLIAN TSENG</strong>
-        <span>Product &amp; Furniture Designer</span>
+      <Link aria-label={`${site.name} — Back to home`} className="portfolio-brand" to="/">
+        <strong>{site.name}</strong>
+        <span>{site.role}</span>
       </Link>
-      <nav aria-label="Direct portfolio navigation" className="portfolio-header__navigation">
-        <Link className="portfolio-all-works" to="/works">ALL WORKS</Link>
+      <nav aria-label="Portfolio navigation">
+        <Link className="portfolio-all-works" to="/works">All Works</Link>
       </nav>
-      <div className="portfolio-header__language"><LanguageSwitch /></div>
     </header>
   );
 }

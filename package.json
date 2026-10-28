@@ -6,12 +6,17 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "test": "vitest"
+    "preview": "vite preview",
+    "test": "vitest",
+    "assets:download": "node scripts/download-cargo-assets.mjs",
+    "assets:images": "node scripts/optimize-cargo-assets.mjs",
+    "assets:videos": "node scripts/optimize-cargo-videos.mjs",
+    "content:generate": "node scripts/generate-portfolio-data.mjs"
   },
   "dependencies": {
     "react": "latest",
     "react-dom": "latest",
-    "react-router-dom": "latest"
+    "react-router-dom": "^7.18.5"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "latest",
@@ -20,7 +25,9 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@vitejs/plugin-react": "latest",
+    "ffmpeg-static": "^5.3.0",
     "jsdom": "latest",
+    "sharp": "^0.35.5",
     "typescript": "latest",
     "vite": "latest",
     "vitest": "latest"

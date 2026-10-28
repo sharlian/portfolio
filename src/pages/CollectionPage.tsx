@@ -1,34 +1,32 @@
 import { Link, useParams } from 'react-router-dom';
-import { collections, projects, type CollectionSlug } from '../data/projects';
-import { useLanguage } from '../i18n/LanguageProvider';
+import { getCollection, projects } from '../data/projects';
+import { NotFoundPage } from './NotFoundPage';
 
 export function CollectionPage() {
   const { slug } = useParams();
-  const { labels, locale } = useLanguage();
-  const collection = collections.find((item) => item.slug === slug);
-  const items = collection
-    ? projects.filter((project) => project.collection === slug as CollectionSlug)
-    : projects;
+  const collection = getCollection(slug);
+  if (slug && !collection) return <NotFoundPage />;
 
-  if (slug && !collection) return null;
+  const items = collection
+    ? collection.projectSlugs
+        .map((projectSlug) => projects.find((project) => project.slug === projectSlug))
+        .filter((project) => project !== undefined)
+    : projects;
 
   return (
     <main id="main-content" tabIndex={-1}>
       <section className="listing">
-        <h1>{collection ? collection.label[locale] : labels.allWorks}</h1>
+        <header className="page-heading">
+          <p className="eyebrow">Portfolio</p>
+          <h1>{collection?.title ?? 'All Works'}</h1>
+          {collection ? <p>{collection.description}</p> : null}
+        </header>
         <div className="work-grid">
           {items.map((project) => (
-            <Link key={project.slug} to={`/works/${project.slug}`}>
-              {project.media[0] && (
-                <img
-                  alt={project.media[0].alt[locale]}
-                  height={project.media[0].height}
-                  loading="lazy"
-                  src={project.media[0].src}
-                  width={project.media[0].width}
-                />
-              )}
-              <span>{project.copy[locale].title}</span>
+            <Link className="work-card" key={project.slug} to={`/projects/${project.slug}`}>
+              <img alt={project.cover.alt} height={project.cover.height} loading="lazy" src={project.cover.src} width={project.cover.width} />
+              <span>{project.title}</span>
+              {project.year ? <small>{project.year}</small> : null}
             </Link>
           ))}
         </div>

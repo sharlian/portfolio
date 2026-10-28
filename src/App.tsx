@@ -1,36 +1,29 @@
-import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';
-import { collections, getProject } from './data/projects';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { SiteFooter } from './components/SiteFooter';
 import { SiteHeader } from './components/SiteHeader';
-import { LanguageProvider } from './i18n/LanguageProvider';
 import { HomePage } from './pages/HomePage';
 import { CollectionPage } from './pages/CollectionPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { ProjectPage } from './pages/ProjectPage';
-import { getDeskMode } from './utils/deskMode';
 import './styles/global.css';
 import './styles/shell.css';
+import './styles/portfolio.css';
 
-export default function App({ now = new Date() }: { now?: Date }) {
-  const mode = getDeskMode(now);
-
+export default function App() {
   return (
     <BrowserRouter>
-      <LanguageProvider>
-        <div className="portfolio-app" data-mode={mode}>
-          <a className="skip-link" href="#main-content">Skip to content</a>
-          <SiteHeader />
-          <Routes><Route element={<HomePage now={now} />} path="/" /><Route element={<WorkRoute />} path="/works/:slug" /><Route element={<CollectionPage />} path="/works" /><Route element={<NotFoundPage />} path="*" /></Routes>
-          <SiteFooter />
-        </div>
-      </LanguageProvider>
+      <div className="portfolio-app">
+        <a className="skip-link" href="#main-content">Skip to content</a>
+        <SiteHeader />
+        <Routes>
+          <Route element={<HomePage />} path="/" />
+          <Route element={<CollectionPage />} path="/works" />
+          <Route element={<CollectionPage />} path="/works/:slug" />
+          <Route element={<ProjectPage />} path="/projects/:slug" />
+          <Route element={<NotFoundPage />} path="*" />
+        </Routes>
+        <SiteFooter />
+      </div>
     </BrowserRouter>
   );
-}
-
-function WorkRoute() {
-  const { slug } = useParams();
-  if (collections.some((collection) => collection.slug === slug)) return <CollectionPage />;
-  if (getProject(slug ?? '')) return <ProjectPage />;
-  return <NotFoundPage />;
 }

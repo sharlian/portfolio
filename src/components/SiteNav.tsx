@@ -3,14 +3,14 @@ import { collections } from '../data/projects';
 import { useLanguage } from '../i18n/LanguageProvider';
 
 export function SiteNav() {
-  const { locale, labels } = useLanguage();
+  const { labels } = useLanguage();
 
   return (
     <nav className="site-nav" aria-label={labels.primaryNavigation}>
       <NavLink to="/works">{labels.allWorks}</NavLink>
       {collections.map((collection) => (
         <NavLink key={collection.slug} to={`/works/${collection.slug}`}>
-          {collection.label[locale]}
+          {collection.title}
         </NavLink>
       ))}
     </nav>
