@@ -15,6 +15,7 @@ export function HomePage() {
         <div className="home-categories__grid">
           {collections.map((collection) => (
             <Link className="category-card" key={collection.slug} to={`/works/${collection.slug}`}>
+              <span aria-hidden="true" className="category-card__arrow">➜</span>
               <strong>{collection.title}</strong>
             </Link>
           ))}

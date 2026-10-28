@@ -3,7 +3,6 @@ import { site } from '../data/projects';
 export function SiteFooter() {
   return (
     <footer className="portfolio-footer">
-      <p>{site.name}</p>
       <nav aria-label="Contact Sharlian">
         {site.contacts.map((contact) => {
           const external = contact.href.startsWith('http');

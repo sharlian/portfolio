@@ -20,3 +20,26 @@ test('renders the portfolio shell and canonical work navigation', () => {
   expect(document.querySelector('.home-hero .button-link')).not.toBeInTheDocument();
   expect(document.querySelector('.home-categories > .button-link')).toHaveAttribute('href', '/works');
 });
+
+test('adds decorative arrows to each category link without changing its accessible name', () => {
+  render(<App />);
+
+  const categoryNames = ['Emotion & Meaning', 'Form & Culture', 'Function & Reality'];
+
+  categoryNames.forEach((name) => {
+    const link = screen.getByRole('link', { name });
+    const arrow = link.querySelector('.category-card__arrow');
+
+    expect(arrow).toHaveTextContent('➜');
+    expect(arrow).toHaveAttribute('aria-hidden', 'true');
+  });
+});
+
+test('keeps contact links in the footer without repeating the designer name', () => {
+  render(<App />);
+
+  const footer = document.querySelector('.portfolio-footer');
+
+  expect(footer?.querySelector('p')).not.toBeInTheDocument();
+  expect(screen.getByRole('navigation', { name: 'Contact Sharlian' })).toBeInTheDocument();
+});
