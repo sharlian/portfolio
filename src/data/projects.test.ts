@@ -20,11 +20,16 @@ test('uses only local runtime media paths', () => {
   });
 });
 
-test('records the three assets that Cargo could not return', () => {
-  expect(missingAssets).toHaveLength(3);
-  expect(missingAssets.map((asset) => asset.projectTitle)).toEqual([
-    'PET URN | Company',
-    'PET URN | Company',
-    'PET URN | Tie',
-  ]);
+test('includes the recovered Company and Tie assets with no remaining gaps', () => {
+  const company = projects.find((project) => project.slug === 'company');
+  const tie = projects.find((project) => project.slug === 'tie');
+  const companyImages = company?.content.flatMap((block) => block.type === 'image' ? [block.src] : []);
+  const tieImages = tie?.content.flatMap((block) => block.type === 'image' ? [block.src] : []);
+
+  expect(missingAssets).toEqual([]);
+  expect(companyImages).toEqual(expect.arrayContaining([
+    '/media/display/E2605376898779255339093382875918.avif',
+    '/media/display/L2605378966493245305270733064974.avif',
+  ]));
+  expect(tieImages).toContain('/media/display/T2605395203538739913302580087566.avif');
 });

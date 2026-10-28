@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T02:28:40.638Z",
+  "generatedAt": "2026-10-28T03:43:37.021Z",
   "site": {
     "name": "SHARLIAN TSENG",
     "role": "Product & Furniture Designer",
@@ -5481,9 +5481,11 @@
           "alt": "PET URN | Company — image 6"
         },
         {
-          "type": "missing",
-          "assetId": "E2605376898779255339093382875918",
-          "label": "Original asset unavailable"
+          "type": "image",
+          "src": "/media/display/E2605376898779255339093382875918.avif",
+          "width": 1200,
+          "height": 396,
+          "alt": "PET URN | Company — image 7"
         },
         {
           "type": "image",
@@ -5497,9 +5499,11 @@
           "text": "Inspiration\n\nThe inspiration comes from the side view of pets and humans looking at each other. This picture must exist in the memories of every owner and every pet. It's the simplest but also the purest and beautiful scene. Both eyes and hearts are full of emotion.\n\nThe connection between humans and pets is shown by a circle of dent on the necks of the side face patterns on the two parts. You can tie your pet's old collar on, and the two parts of Company form a whole.\n\n靈感源於寵物與人類對望的側面，在每個飼主、每個寵物的回憶中都一定存在這這畫面，最簡單但也最純粹美好，兩者的眼中、心中都飽含對彼此的情感。\n\n而人寵間的連結，通過兩個器皿上側臉圖案脖子部分的一圈凹陷所展現，可以將寵物生前的項圈繫在上面，將「伴」的兩部分組成一個整體。"
         },
         {
-          "type": "missing",
-          "assetId": "L2605378966493245305270733064974",
-          "label": "Original asset unavailable"
+          "type": "image",
+          "src": "/media/display/L2605378966493245305270733064974.avif",
+          "width": 1200,
+          "height": 543,
+          "alt": "PET URN | Company — image 10"
         },
         {
           "type": "text",
@@ -5664,9 +5668,11 @@
           "alt": "PET URN | Tie — image 15"
         },
         {
-          "type": "missing",
-          "assetId": "T2605395203538739913302580087566",
-          "label": "Original asset unavailable"
+          "type": "image",
+          "src": "/media/display/T2605395203538739913302580087566.avif",
+          "width": 1200,
+          "height": 907,
+          "alt": "PET URN | Tie — image 16"
         },
         {
           "type": "image",
@@ -7204,29 +7210,7 @@
       ]
     }
   ],
-  "missingAssets": [
-    {
-      "projectTitle": "PET URN | Company",
-      "projectSlug": "company",
-      "assetId": "E2605376898779255339093382875918",
-      "sourcePosition": 6,
-      "reason": "Cargo returned a transparent placeholder instead of the original asset."
-    },
-    {
-      "projectTitle": "PET URN | Company",
-      "projectSlug": "company",
-      "assetId": "L2605378966493245305270733064974",
-      "sourcePosition": 9,
-      "reason": "Cargo returned a transparent placeholder instead of the original asset."
-    },
-    {
-      "projectTitle": "PET URN | Tie",
-      "projectSlug": "tie",
-      "assetId": "T2605395203538739913302580087566",
-      "sourcePosition": 15,
-      "reason": "Cargo returned a transparent placeholder instead of the original asset."
-    }
-  ],
+  "missingAssets": [],
   "sourceDefects": [
     {
       "projectTitle": "PET_HUMAN | Eat together !",

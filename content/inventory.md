@@ -3,8 +3,8 @@
 Captured from the authenticated Cargo editor on 2026-10-27T09:09:51.451Z. The public Cargo site may be private or expired.
 
 - Projects: 39
-- Downloaded unique assets: 816 (777 images, 39 videos)
-- Unavailable source assets: 3
+- Saved unique assets: 819 (780 images, 39 videos)
+- Unavailable source assets: 0
 
 | Work | Category | Original URL | Text | Media |
 | --- | --- | --- | --- | --- |
@@ -32,9 +32,9 @@ Captured from the authenticated Cargo editor on 2026-10-27T09:09:51.451Z. The pu
 | PET URN \| Pharos | Emotion & Meaning | https://sharlian.cargo.site/pet-urn-\|-pharos-1 | 15 blocks saved | 28 images, 0 videos saved |
 | SOFA \| Sandbag | Function & Reality | https://sharlian.cargo.site/sofa-\|-sandbag | 8 blocks saved | 28 images, 1 videos saved |
 | PET URN \| Relive | Emotion & Meaning | https://sharlian.cargo.site/pet-urn-\|-relive | 7 blocks saved | 13 images, 0 videos saved |
-| PET URN \| Company | Emotion & Meaning | https://sharlian.cargo.site/pet-urn-\|-company | 4 blocks saved | 5 images, 0 videos saved; 2 missing |
+| PET URN \| Company | Emotion & Meaning | https://sharlian.cargo.site/pet-urn-\|-company | 4 blocks saved | 7 images, 0 videos saved |
 | MATERIAL APPLICATION \| Acrylic | Emotion & Meaning | https://sharlian.cargo.site/material-application-\|-acrylic | 3 blocks saved | 3 images, 0 videos saved |
-| PET URN \| Tie | Emotion & Meaning | https://sharlian.cargo.site/pet-urn-\|-tie | 9 blocks saved | 24 images, 0 videos saved; 1 missing |
+| PET URN \| Tie | Emotion & Meaning | https://sharlian.cargo.site/pet-urn-\|-tie | 9 blocks saved | 25 images, 0 videos saved |
 | PET URN \| Plant Pot Concepts | Emotion & Meaning | https://sharlian.cargo.site/pet-urn-\|-plant-pot-concepts | 5 blocks saved | 22 images, 0 videos saved |
 | COASTAL CLEANUP \| c.c.Lab | Function & Reality | https://sharlian.cargo.site/coastal-cleanup-\|-c-c-lab | 12 blocks saved | 18 images, 4 videos saved |
 | PET_HUMAN \| Eat together ! | Emotion & Meaning | https://sharlian.cargo.site/pet_human-\|-eat-together-! | 4 blocks saved | 16 images, 0 videos saved |
@@ -50,9 +50,7 @@ Captured from the authenticated Cargo editor on 2026-10-27T09:09:51.451Z. The pu
 
 ## Missing source assets
 
-- PET URN | Company: E2605376898779255339093382875918 (original content position 7)
-- PET URN | Company: L2605378966493245305270733064974 (original content position 10)
-- PET URN | Tie: T2605395203538739913302580087566 (original content position 16)
+None.
 
 ## Confirmed source defect
 

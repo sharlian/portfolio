@@ -63,7 +63,7 @@ const missingAssets = [];
 
 function toLocalMedia(block, projectTitle, position) {
   const asset = assets.get(block.hash);
-  if (!/^https?:/.test(block.src ?? "") || !asset) {
+  if (!asset) {
     const missing = {
       projectTitle,
       projectSlug: slugByTitle.get(projectTitle),
@@ -168,8 +168,8 @@ const portfolio = {
 if (projects.some((project) => !project.slug || !project.cover.src)) {
   throw new Error("A project is missing its local slug or cover image.");
 }
-if (missingAssets.length !== 3) {
-  throw new Error(`Expected 3 missing Cargo assets, found ${missingAssets.length}.`);
+if (missingAssets.length !== 0) {
+  throw new Error(`Expected all supplied assets to be recovered, found ${missingAssets.length} missing.`);
 }
 
 const escapeTable = (value) => String(value).replaceAll("|", "\\|").replaceAll("\n", " ");
@@ -190,13 +190,15 @@ const inventoryRows = projects.map((project) => {
 const inventory = `# Cargo content inventory\n\n` +
   `Captured from the authenticated Cargo editor on ${cargo.capturedAt}. The public Cargo site may be private or expired.\n\n` +
   `- Projects: ${projects.length}\n` +
-  `- Downloaded unique assets: ${manifest.assets.length} (${manifest.assets.filter((asset) => asset.type === "image").length} images, ${manifest.assets.filter((asset) => asset.type === "video").length} videos)\n` +
+  `- Saved unique assets: ${manifest.assets.length} (${manifest.assets.filter((asset) => asset.type === "image").length} images, ${manifest.assets.filter((asset) => asset.type === "video").length} videos)\n` +
   `- Unavailable source assets: ${missingAssets.length}\n\n` +
   `| Work | Category | Original URL | Text | Media |\n` +
   `| --- | --- | --- | --- | --- |\n` +
   `${inventoryRows.join("\n")}\n\n` +
   `## Missing source assets\n\n` +
-  missingAssets.map((asset) => `- ${asset.projectTitle}: ${asset.assetId} (original content position ${asset.sourcePosition + 1})`).join("\n") +
+  (missingAssets.length
+    ? missingAssets.map((asset) => `- ${asset.projectTitle}: ${asset.assetId} (original content position ${asset.sourcePosition + 1})`).join("\n")
+    : `None.`) +
   `\n\n## Confirmed source defect\n\n` +
   `- PET_HUMAN | Eat together !: Cargo's first body heading incorrectly says “MATERIAL APPLICATION | Acrylic”. The new site uses the verified project title and preserves the remaining body content.\n`;
 
